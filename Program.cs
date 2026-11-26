@@ -33,6 +33,8 @@ else
     Console.WriteLine($"Первый индекс: {index}");
 }
 
+Console.WriteLine($"Последний индекс: {FindLastCharacterIndex(text, target)}");
+
 int CountCharacter(string text, char target)
 {
     int count = 0;
@@ -95,4 +97,17 @@ int CountWords(string text)
 {
     string[] words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
     return words.Length;
+}
+
+int FindLastCharacterIndex(string text, char target)
+{
+    for (int i = text.Length - 1; i >= 0; i--)
+    {
+        if (text[i] == target)
+        {
+            return i;
+        }
+    }
+
+    return -1;
 }
